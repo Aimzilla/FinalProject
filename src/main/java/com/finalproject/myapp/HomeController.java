@@ -56,6 +56,7 @@ public class HomeController {
 		return "home";
 	}
 
+
 	@RequestMapping(value = "sayGoodBye", method = RequestMethod.GET)
 	public String mainMethod(Model model) {
 		// logger.info("Welcome home! The client locale is {}.", locale);
