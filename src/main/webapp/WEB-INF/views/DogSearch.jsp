@@ -18,14 +18,16 @@ body{background-color:#60C8E7;}
 </style>
 </head>
 <body>
-<<<<<<< HEAD
+
 
 <h3 class="h4.right" >You are logged in as: <c:out value="${sessionScope.user.email}"/> </h3> 
 
 
-=======
+
 <h3 class="h4.right" >You are logged in as: <c:out value="${sessionScope.user.email}"/> </h3> 
->>>>>>> 3f65214128bbbbdd02c0b9e3eef080aa02fbb779
+
+<h3 class="h4.right" >You are logged in as: <c:out value="${sessionScope.user.email}"/> </h3> 
+
 <a href="<%=request.getContextPath() %><c:out value="/logout"/>"> logout </a>
 
 
