@@ -2,23 +2,26 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html class="mvscreen">
-<head>
+	<head>
 <spring:url value="/resources/style.css" var="style"/>
 <link href="${style}" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>LogIn</title>
-<style>
-body{background-color:#60C8E7;}
-</style>
-</head>
+		<title>LogIn</title>
+
+	</head>
 
 <body>
+	<style>
+		body{background-color:#60C8E7;}
+	</style>
 
 <div class="title">
-<h1 align="center">Detroit Dogs</h1>
+	<h1 align="center">Detroit Dogs</h1>
 </div>
 
+<div class="entirepage">
 <section class ="loginform cf">
   <form   action="loginuser" method ="post">
   <h1>Login here!</h1>
@@ -52,7 +55,7 @@ body{background-color:#60C8E7;}
    </ul>
 </form>
 </section>
-
+</div>
 
 
 </body>
