@@ -18,10 +18,15 @@ body{background-color:#60C8E7;}
 </style>
 </head>
 <body>
-<h4 class="h4.right" >Logged in as : <c:out value="${sessionScope.user.email}"/> </h4> 
+
+<h3 class="h4.right" >You are logged in as: <c:out value="${sessionScope.user.email}"/> </h3> 
+
+
 <a href="<%=request.getContextPath() %><c:out value="/logout"/>"> logout </a>
+
+
 <form action="formPage" method="get">
-<h3>Search for your new family member by breed:</h3>
+<h2>Search for your new family member by breed:</h2>
 <select name=breed>
         <option disabled selected value=>--select an option --</option>
         <option value="Akita">Akita</option>
@@ -56,6 +61,8 @@ body{background-color:#60C8E7;}
 	 </a>
    </div>  
 </c:forEach>
+
+
 
 </body>
 </html>
