@@ -6,7 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Shelter Table</title>
+<style>
+body{background-color:#60C8E7;}
+</style>
 </head>
 <body>
 <table border=1>

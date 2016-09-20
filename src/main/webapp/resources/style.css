@@ -2,6 +2,10 @@ html {
 	background: url("HP_Metro_Sky.jpg");
 	font-size: 10pt;
 }
+
+.title{font-size: 20pt;}
+
+
 .mvscreen1 {
 	background: url("dogbackground2.jpg");
 	font-size: 10pt;

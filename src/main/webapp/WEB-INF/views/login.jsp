@@ -7,15 +7,21 @@
 <spring:url value="/resources/style.css" var="style"/>
 <link href="${style}" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>LogIn</title>
+<style>
+body{background-color:#60C8E7;}
+</style>
 </head>
 
 <body>
 
+<div class="title">
 <h1 align="center">Detroit Dogs</h1>
+</div>
+
 <section class ="loginform cf">
   <form   action="loginuser" method ="post">
-  <h1>Login Page</h1>
+  <h1>Login here!</h1>
   <h2 style="color:red;">
   
     <% if(request.getAttribute("message")!=null){
@@ -40,7 +46,7 @@
   </ul>
   <ul>
    <li>
-     <label for ="link">Not a Member</label>
+     <label for ="link">Not a Member?</label>
      <a href="register"> Sign Up</a>
      </li>
    </ul>

@@ -10,7 +10,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <spring:url value="/resources/style.css" var="style"/>
 <link href="${style}" rel="stylesheet" />
-<title>Insert title here</title>
+<title>Shelter Info</title>
+<style>
+body{background-color:#60C8E7;}
+</style>
 </head>
 <body>
 <h4 style="color:blue;" >Logged in as : <c:out value="${sessionScope.user.email}"/> </h4> 

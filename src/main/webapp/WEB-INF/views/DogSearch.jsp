@@ -12,7 +12,10 @@
 <spring:url value="/resources/images" var="images"/>
 <spring:url value="/" var="mdetail"/>
 <link href="${style}" rel="stylesheet" />
-<title>Detroit Dogs</title>
+<title>Detroit Dog Search</title>
+<style>
+body{background-color:#60C8E7;}
+</style>
 </head>
 <body>
 <h4 class="h4.right" >Logged in as : <c:out value="${sessionScope.user.email}"/> </h4> 

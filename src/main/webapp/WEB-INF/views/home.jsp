@@ -3,27 +3,23 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 
-
 <html>
 <head>
 
-<title>Dog : Pure CSS</title>
-
+<title>Detroit Dogs</title>
 
 <link rel="stylesheet" href="resources/css/normalize.css">
-
-
 <link rel="stylesheet" href="resources/css/style.css">
-
-
-
 
 </head>
 
 <body>
-<h1>Detroit Dogs</h1>
+	<h1>Detroit Dogs</h1>
 
-<p>Welcome!  Please login or sign up below:</p>
+	<p>Welcome! Please login or sign up below:</p>
+	<div class="login">
+	<a href="login">Login or Sign up</a>
+	</div>
 
 	<div class="dog">
 		<div class="ears"></div>
@@ -54,7 +50,7 @@
 
 
 
-<a href="login">Click to LogIn</a>
+	
 
 </body>
 </html>

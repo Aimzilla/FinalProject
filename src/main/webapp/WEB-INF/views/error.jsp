@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Whoops!</title>
+<style>
+body{background-color:#60C8E7;}
+</style>
 </head>
 <body>
-<h1>all fields are mendotory</h1>
+<h1>Something went wrong!  Please enter all the fields to create your account.</h1>
 </body>
 </html>
