@@ -12,7 +12,14 @@ text-align: center;}
 .login{color: white;
 text-align: center;}
 
+.logout{color:white;
+text-align: left;}
+
+
+
 .entirepage{background-color:#60C8E7;}
+
+.entirebackground{background-color: #60C8E7;}
 
 html, body {
   background: #1D4569;

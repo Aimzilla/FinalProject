@@ -5,20 +5,27 @@ html {
 
 .title{font-size: 20pt;}
 
-
+.loginhere{text-align:center;
+font-size: 24pt;}
 
 .mvscreen1 {
 	background: url("dogbackground2.jpg");
 	font-size: 10pt;
+	background-color:#60C8E7;
 }
 .mvscreen2 {
 	background: url("Capture.jpg");
 	font-size: 10pt;
+	background-color:#60C8E7;
 }
 .mvscreen {
 	background: url("DogBackground.jpg");
 	font-size: 10pt;
+	background-color:#60C8E7;
 }
+
+.mvscreen7 {background-color:#60C8E7;}
+
 label {
 	display: block;
 	color: #999;

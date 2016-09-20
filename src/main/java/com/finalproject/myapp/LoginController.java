@@ -53,7 +53,7 @@ public class LoginController {
 		
 		Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo","root","awadhbihari");
 		
-		String selectSQL = "SELECT password FROM userinfo.user where email= ?";
+		String selectSQL = "SELECT password FROM user where email= ?";
 		ResultSet rs =null;
 		PreparedStatement preparedStatement = cnn.prepareStatement(selectSQL);
 		preparedStatement.setString(1, email );
@@ -82,7 +82,7 @@ public class LoginController {
 		
 		 
 	 } catch (Exception e) {
-		 System.out.println(e);
+		 System.out.println(e.getMessage());
 
 			e.printStackTrace();
 			return "error";
@@ -104,7 +104,7 @@ public class LoginController {
 		
 		
 		Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo","root","awadhbihari");
-		String insertCommand ="insert into User values('"+ firstName +"','"+ lastName +"','"+ email +"','"+ password +"')";
+		String insertCommand ="insert into user values('"+ firstName +"','"+ lastName +"','"+ email +"','"+ password +"')";
 		Statement st =cnn.createStatement();
 		st.executeUpdate(insertCommand);
 		
