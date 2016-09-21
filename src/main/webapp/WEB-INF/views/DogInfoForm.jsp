@@ -12,13 +12,14 @@
 <link href="${style}" rel="stylesheet" />
 <title>Doggy Info</title>
 <style>
-body{background-color:#60C8E7;}
+body{background-color:#60C8E7;
+font-size: 12pt;}
 </style>
 
 </head>
 <body>
-<h4 style="color:blue;" >Logged in as : <c:out value="${sessionScope.user.email}"/> </h4> 
-<a href="<%=request.getContextPath() %><c:out value="/logout"/>"> logout </a>
+<h4 style="color:black;" >You are logged in as:  <c:out value="${sessionScope.user.email}"/> </h4> 
+<a href="<%=request.getContextPath() %><c:out value="/logout"/>">Logout </a>
 
    <div class="img">	 
 	 

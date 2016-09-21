@@ -26,6 +26,8 @@ font-size: 24pt;}
 
 .mvscreen7 {background-color:#60C8E7;}
 
+.mvscreen8 {background-color:#60C8E7;}
+
 label {
 	display: block;
 	color: #999;
@@ -154,16 +156,16 @@ div.desc {
 
 div.img1 {
     margin: 2px;
-    border: 2px solid #ccc;
+    border: 5px solid #ccc;
     float: left;
-    width: 480px;
-    height: 480px;
+    width: 600px;
+    height: 650px;
 }
 
 p.thick {
     font-weight: bold;
 }
-h1.center {
+h2.center {
     text-align: center;
 }
 span.star {
