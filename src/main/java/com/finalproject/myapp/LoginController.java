@@ -53,20 +53,21 @@ public class LoginController {
 		
 		Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo","root","awadhbihari");
 		
-		String selectSQL = "SELECT password FROM user where email= ?";
+		String selectSQL = "SELECT password, firstname FROM user where email= ?";
 		ResultSet rs =null;
 		PreparedStatement preparedStatement = cnn.prepareStatement(selectSQL);
 		preparedStatement.setString(1, email );
-		//preparedStatement.setString(2, password );
+		//preparedStatement.setString(2, firstName );
 		User user=new User(email,password);
 		 rs = preparedStatement.executeQuery();
 		 if(rs.next()){
 			  if(password.equals(rs.getString(1))){
+				  user.setFirstName(rs.getString(2));
 				System.out.println(" inside next");
 				//setting the user in the session
 				session.setAttribute("user",user ); 
 				session.setMaxInactiveInterval(15*60);
-				System.out.println("set up sessionn for "+user.getEmail());
+				//System.out.println("set up sessionn for "+user.getEmail());
 			     return "redirect:getRandomDog";
 				}else {
 					//password does not match please send message to user ,
@@ -75,7 +76,7 @@ public class LoginController {
 				}
 		 }else{ 
 				//there is no user send it to register
-			   request.setAttribute("message","User does exist.Please click signup to register");
+			   request.setAttribute("message","User does not exist.Please click signup to register");
 				return "login";
 			}
 
@@ -90,7 +91,7 @@ public class LoginController {
 		
 	 }
 	
-	@RequestMapping(value = "registerForm", method = RequestMethod.GET)
+	@RequestMapping(value = "registerForm", method = RequestMethod.POST)
 	 public String processRegister(Model model, HttpServletRequest request)
 	 {
 		// put db code to insert the new user 

@@ -18,7 +18,7 @@ body{background-color:#60C8E7;}
 </head>
 
 <body>
-<h4 style="color:black;" >You are logged in as: <c:out value="${sessionScope.user.email}"/> </h4> 
+<h4 style="color:black;" >You are logged in as: <c:out value="${sessionScope.user.firstName}"/> </h4> 
 <h2>Shelter contact information:</h2>
 
 <a href="<%=request.getContextPath() %><c:out value="/logout"/>"> Logout </a>

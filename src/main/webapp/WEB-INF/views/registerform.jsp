@@ -18,7 +18,7 @@ body{background-color:#60C8E7;}
 	<h1 align="center">Please sign up to find your new family member!</h1>
 	
 	<section class="signup cf">
-	<form action="loginuser" method="post">
+	<form action="registerForm" method="post">
 		<h1>Sign Up Here:</h1>
 		<ul>
 			<label for="firstname">First name:</label>

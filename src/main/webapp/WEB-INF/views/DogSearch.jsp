@@ -20,7 +20,7 @@ body{background-color:#60C8E7;}
 <body>
 
 
-<h3 class="h4.right" >You are logged in as: <c:out value="${sessionScope.user.email}"/> </h3> 
+<h3 class="h4.right" >Welcome: <c:out value="${sessionScope.user.firstName}"/> </h3> 
 
 <a href="<%=request.getContextPath() %><c:out value="/logout"/>">Logout </a>
 
@@ -74,9 +74,10 @@ body{background-color:#60C8E7;}
 	 <img src="<c:out value="${dog.photo}"/>" alt="n"  
 	 	    		width="300" height="200"> 
 	 	    		
-	 <a href="<c:out value="${dog.id}"/>"> 	
+	 </a>	    		
+<%-- 	 <a href="<c:out value="${dog.id}"/>"> 	 --%>
 	 <c:out value="${dog.name}"/>
-	 </a>
+	 
    </div>  
 </c:forEach>
 
