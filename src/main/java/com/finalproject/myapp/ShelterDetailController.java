@@ -137,8 +137,6 @@ public String getShelter(Model model, HttpServletRequest request,HttpSession ses
         System.out.println(result );
        }            
 
-       // model.addAttribute("pagedata", result);
-       // model.addAttribute("shelter", lst);
        model.addAttribute("shelter", shelter);
         
     } catch (Exception e) {

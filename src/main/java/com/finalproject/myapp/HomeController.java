@@ -206,10 +206,8 @@ public class HomeController {
 				// address that we want to call
 				HttpHost host = new HttpHost("api.petfinder.com", 80, "http");
 				// http method: get
-				//HttpGet getPage = new HttpGet("/pet.find?format=xml&key=688cf0271f4f3125175bf1d9a9f8973f&location=48326&animal=dog&breed=akita&output=basic");
+				
 				HttpGet getPage = new HttpGet("/pet.find?format=xml&key=688cf0271f4f3125175bf1d9a9f8973f&location=48326&animal=dog&output=basic");
-				//HttpGet getPage = new HttpGet("/pet.find?format=xml&key=688cf0271f4f3125175bf1d9a9f8973f&location=48326&animal=dog&breed="+breed+"&output=basic");
-
 				
 				// execute the http request and get the http response back
 				HttpResponse resp = http.execute(host, getPage);
@@ -240,13 +238,7 @@ public class HomeController {
 				NodeList n6 = doc.getElementsByTagName("size");
 				NodeList n7 = doc.getElementsByTagName("option");
 				NodeList n8 = doc.getElementsByTagName("photo");
-				/*NodeList n9 = doc.getElementsByTagName("shelterId");
-				NodeList n10 = doc.getElementsByTagName("address1");
-				NodeList n11 = doc.getElementsByTagName("address2");
-				NodeList n12 = doc.getElementsByTagName("city");
-				NodeList n13 = doc.getElementsByTagName("zip");
-				NodeList n14 = doc.getElementsByTagName("phone");
-				NodeList n15 = doc.getElementsByTagName("email");*/
+				
 				ArrayList<MyDog> dogList = new ArrayList<MyDog>();
 				String ph="";
 				for (int i = 0; i < nl.getLength(); i++) {
@@ -286,45 +278,13 @@ public class HomeController {
 						ctr++;
 						
 					}
-					//NodeList childNode = photoElement.getChildNodes();
-					//for (int j = 0; j < childNode.getLength(); j++) {
-						//org.w3c.dom.Element optionsEle = (org.w3c.dom.Element) childNode.item(j);
-						
-						 
+					
 						 randomDogResult += ("<h6>" + randomDog+ " " + name +" " +
 									breed +" " + sex +" " + age +" " + size+" " + options+" " + ph +" " +"</h6>");
 									dogList.add(new MyDog(randomDog,name,breed,sex,age,size,options,ph));
-						// System.out.println("photo0000 " + ph);
+						
 					}
-					//org.w3c.dom.Element photo=(org.w3c.dom.Element)childNode.item(1);
 					
-					
-				//	org.w3c.dom.Element shelterIdElement = (org.w3c.dom.Element) n9.item(i);
-				//	String shelterId = shelterIdElement.getFirstChild().getNodeValue().trim();
-					
-				//	org.w3c.dom.Element address1Element = (org.w3c.dom.Element) n10.item(i);
-				//	String address1 = address1Element.getFirstChild().getNodeValue().trim();
-					
-				//	org.w3c.dom.Element address2Element = (org.w3c.dom.Element) n11.item(i);
-				//	String address2 = address2Element.getFirstChild().getNodeValue().trim();
-					
-				//	org.w3c.dom.Element cityElement = (org.w3c.dom.Element) n12.item(i);
-				//	String city = cityElement.getFirstChild().getNodeValue().trim();
-					
-				//	org.w3c.dom.Element zipElement = (org.w3c.dom.Element) n13.item(i);
-				//	String zip = zipElement.getFirstChild().getNodeValue().trim();
-					
-				//	org.w3c.dom.Element phoneElement = (org.w3c.dom.Element) n14.item(i);
-				//	String phone = phoneElement.getFirstChild().getNodeValue().trim();
-					
-				//	org.w3c.dom.Element emailElement = (org.w3c.dom.Element) n15.item(i);
-				//	String email = emailElement.getFirstChild().getNodeValue().trim();
-				
-					
-					
-				
-
-				//model.addAttribute("pagedata", randomDogResult);
 				 model.addAttribute("dogs", dogList);
 			} catch (Exception e) {
 				System.out.println(e);
@@ -335,20 +295,5 @@ public class HomeController {
 
 		}
 		
-	/*@RequestMapping(value = "index", method = RequestMethod.GET)
-	public String getIndex(Model model) {
-		// logger.info("Welcome home! The client locale is {}.", locale);
-
-		// Date date = new Date();
-		// DateFormat dateFormat =
-		// DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG,
-		// locale);
-
-		// String formattedDate = dateFormat.format(date);
-
-		// model.addAttribute("message", "Good Bye!" );
-
-		return "index";
-	}
-*/
+	
 }

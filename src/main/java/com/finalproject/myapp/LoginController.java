@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,7 +40,7 @@ public class LoginController {
 		return "registerform";
 	 }
 	@RequestMapping(value = "loginuser", method = RequestMethod.POST)
-	 public String processlogin(Model model, HttpServletRequest request,HttpSession session)
+	 public String processlogin(Model model, HttpServletRequest request,HttpSession session) throws ClassNotFoundException, SQLException
 	 {
 		// put db code to check the user
 		// if the user is found, then return "home"
@@ -57,7 +58,7 @@ public class LoginController {
 		ResultSet rs =null;
 		PreparedStatement preparedStatement = cnn.prepareStatement(selectSQL);
 		preparedStatement.setString(1, email );
-		//preparedStatement.setString(2, firstName );
+		
 		User user=new User(email,password);
 		 rs = preparedStatement.executeQuery();
 		 if(rs.next()){
@@ -67,7 +68,7 @@ public class LoginController {
 				//setting the user in the session
 				session.setAttribute("user",user ); 
 				session.setMaxInactiveInterval(15*60);
-				//System.out.println("set up sessionn for "+user.getEmail());
+	
 			     return "redirect:getRandomDog";
 				}else {
 					//password does not match please send message to user ,
@@ -83,11 +84,11 @@ public class LoginController {
 		
 		 
 	 } catch (Exception e) {
-		 System.out.println(e.getMessage());
+		System.out.println(e.getMessage());
 
 			e.printStackTrace();
 			return "error";
-	 } 
+	} 
 		
 	 }
 	

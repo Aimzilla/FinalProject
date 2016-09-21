@@ -54,9 +54,12 @@ font-size: 12pt;}
 	<c:out value="${dog.shelterID}"/>
 	 </a>
    
+   <br>
+    <a href="favourite?actiontype=add&dogid=${dog.id}">Add to favs</a>
 
-	 	
+ 
 </div>
+
 
 
 </body>
