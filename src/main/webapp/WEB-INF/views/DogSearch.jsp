@@ -129,7 +129,7 @@ a:hover {
 	<option value="Poodle">Poodle</option> 
     </select>
 
-<input type="submit" value="Submit!">
+<input type="submit" value="Search by breed">
 
 </form>
 <!-- <form:form  method ="post" action="searchDog.html">
