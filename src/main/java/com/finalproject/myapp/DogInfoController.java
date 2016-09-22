@@ -23,6 +23,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
@@ -255,7 +256,7 @@ public class DogInfoController {
 		}
 		return "DogSearch";
 	}
-	@RequestMapping(value = "favourite")
+	@RequestMapping(value = "favourite", method = RequestMethod.GET)
 	public String inputfavorite(Model model, HttpServletRequest request,HttpSession session) {
 	
 		logger.info("Welcome inputfavorite! Inside dogcontroller's inputfavorite method" );
@@ -264,7 +265,7 @@ public class DogInfoController {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo","root","awadhbihari");
+			Connection cnn = DriverManager.getConnection("link");
 			
 			String dogid=request.getParameter("dogid");
 			User u = (User)session.getAttribute("user");
@@ -302,7 +303,7 @@ public class DogInfoController {
 				}catch(Exception e){
 					System.out.println(e);
 					//e.printStackTrace();
-					return "errorPage";
+					return "errorpage";
 				}
 		          return "Favorite";
 	}
@@ -390,7 +391,7 @@ public class DogInfoController {
 						ctr++;
 						
 					}
-					 System.out.println(ph);
+					// System.out.println(ph);
 					
 					org.w3c.dom.Element descElement = (org.w3c.dom.Element) n9.item(i);
 					description = descElement.getFirstChild().getNodeValue().trim();
@@ -409,7 +410,7 @@ public class DogInfoController {
 		 }catch (Exception e) {
 				System.out.println(e);
 				
-				//return "errorpage";
+				//return "errorPage";
 			}
 		 return dog;
 }

@@ -14,12 +14,58 @@
 <style>
 body{background-color:#60C8E7;
 font-size: 12pt;}
+#nav {
+  background-color: #bbbbbb;
+  font-family: Helvetica, sans-serif;
+  height: auto;
+}
+
+ul {
+  background-color: #3973ac;
+  overflow: auto;
+  padding: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+   
+ }
+
+li {
+  background-color: #3973ac;
+  color: White;
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+
+a {
+  background-color: #3973ac;
+  text-decoration: none;
+  color: White;
+  display: block;
+  margin: 0px;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+a:hover {
+  background-color: #60C8E7;
+  transition: 2s background-color;
+}
 </style>
 
 </head>
 <body>
+<div id="nav">
+    <ul>
+    <li><a href="home">Home</a></li>
+    <li><a href="getRandomDog">Search</a></li>
+    <li><a href="favourite?actiontype">Favorites</a></li>
+    <li><a href="home">Logout</a></li>
+  </ul>
+</div>
 <h4 style="color:black;" >You are logged in as:  <c:out value="${sessionScope.user.firstName}"/> </h4> 
-<a href="<%=request.getContextPath() %><c:out value="/logout"/>">Logout </a>
+<%-- <a href="<%=request.getContextPath() %><c:out value="/logout"/>">Logout </a> --%>
 
    <div class="img">	 
 	 
@@ -55,7 +101,7 @@ font-size: 12pt;}
 	 </a>
    
    <br>
-    <a href="favourite?actiontype=add&dogid=${dog.id}">Add to favs</a>
+    <a href="favourite?actiontype=add&dogid=${dog.id}">Add to favorites</a>
 
  
 </div>

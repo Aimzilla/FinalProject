@@ -52,7 +52,7 @@ public class LoginController {
 			Class.forName("com.mysql.jdbc.Driver");
 		
 		
-		Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo","root","awadhbihari");
+		Connection cnn = DriverManager.getConnection("link");
 		
 		String selectSQL = "SELECT password, firstname FROM user where email= ?";
 		ResultSet rs =null;
@@ -72,12 +72,12 @@ public class LoginController {
 			     return "redirect:getRandomDog";
 				}else {
 					//password does not match please send message to user ,
-					request.setAttribute("message","Incorrect Password :Please Try Again ");
+					request.setAttribute("message","Incorrect Password: Please Try Again ");
 					return "login";
 				}
 		 }else{ 
 				//there is no user send it to register
-			   request.setAttribute("message","User does not exist.Please click signup to register");
+			   request.setAttribute("message","User does not exist. Please click signup to register");
 				return "login";
 			}
 
@@ -105,7 +105,7 @@ public class LoginController {
 			Class.forName("com.mysql.jdbc.Driver");
 		
 		
-		Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo","root","awadhbihari");
+		Connection cnn = DriverManager.getConnection("link");
 		String insertCommand ="insert into user values('"+ firstName +"','"+ lastName +"','"+ email +"','"+ password +"')";
 		Statement st =cnn.createStatement();
 		st.executeUpdate(insertCommand);
