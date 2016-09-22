@@ -83,8 +83,8 @@ a:hover {
 </h1>
 <h1 class="center">
 
-	Breed: <c:out value="${dog.breed}"/>
-	  
+	Breed: <c:out value="${dog.breed}"/><br>
+ 	CuddleFactor: <c:out value="${cuddlefactor}"/>    
 </h1>
  
 

@@ -148,6 +148,29 @@ public class DogInfoController {
 				
 				return "AllAdoptedError";
 			}
+		 try {
+				Class.forName("com.mysql.jdbc.Driver");
+				Connection cnn = DriverManager.getConnection("link");
+				String selectSQL = "select CuddleFactor from CuddleFactor where name= ?";
+				PreparedStatement preparedStatement = cnn.prepareStatement(selectSQL);
+				preparedStatement.setString(1, request.getParameter("id"));
+				//System.out.println("Name ="+dog.getName());
+				
+			ResultSet rs = preparedStatement.executeQuery();
+			String cuddlefactor="";
+			 while(rs.next())
+			 {
+				 cuddlefactor= rs.getString(1);
+				// System.out.println(cuddlefactor);
+			 }
+			 
+			 model.addAttribute("cuddlefactor", cuddlefactor);
+		 }catch(Exception e){
+				System.out.println(e);
+				//e.printStackTrace();
+				return "errorPage";
+			}
+		 
 		return "DogInfoForm";
 		 
 	}
