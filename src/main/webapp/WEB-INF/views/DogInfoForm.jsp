@@ -91,13 +91,14 @@ a:hover {
  <p> "${dog.desc}"</p>
  
 
-	<p class="thick">Click below for shelter contact information:</p>
+<!-- 	<p class="thick">Click below for shelter contact information:</p> -->
 	
 	<c:out value="${dog.breed}"/>
 		 
 	 <a href="<%=request.getContextPath() %><c:out value="/shelterdetail?shelterid="/><c:out value="${dog.shelterID}"/>">  
 	 
-	<c:out value="${dog.shelterID}"/>
+<%-- 	<c:out value="${dog.shelterID}"/> --%>
+         <c:out value="Click here for shelter contact information"/>
 	 </a>
    
    <br>
